@@ -1,0 +1,12 @@
+.user-list{
+    margin-top: 100px;
+}
+
+.add-btn{
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(96, 114, 204);
+    border-radius: 10px;
+    color: white;
+   
+}

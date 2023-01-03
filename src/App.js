@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Header";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router";
+
+import Login from "./components/Login";
+import Admin from "./components/Admin";
+import Dashboard from "./components/Dashboard";
+import Billings from "./components/Billings";
+import Protected from "./components/Protected"
+import authService from "./auth/AuthServices";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        {/* <Route path = "admin" element = {<Admin />} ></Route> */}
+        <Route
+          path="/admin"
+          element={
+            <Protected isAdmin={authService.getCurrentUser()}>
+              <Admin />
+            </Protected>
+          }
+        />
+        <Route path="dashboard" element={<Dashboard />}></Route>
+        <Route path="billings" element={<Billings />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

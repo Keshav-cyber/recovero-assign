@@ -1,0 +1,29 @@
+.user-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:700px;
+    height: auto;
+    padding: 10px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.user-details{
+    margin: 7px;
+}
+
+.delete-btn{
+    padding: 3px;
+    margin-right: auto;
+    border-radius: 2px;
+    background-color:#3461FD;
+    border: 1px solid #3461FD;
+}
+
+.delete-btn:hover, .delete-btn:focus{
+    background: #3461FDDD;
+    border-color: #3461FDDD;
+    box-shadow: 0px 3px 5px 0px #3461FD40, 0 0 0 3px #3461FD80;
+  }
